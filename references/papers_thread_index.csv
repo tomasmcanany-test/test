@@ -1,0 +1,20 @@
+paper_key,authors,year,journal,doi,primary_thread,thread_label,secondary_threads
+glassford2015cooption,Glassford & Rebeiz et al.,2015,Developmental Cell,10.1016/j.devcel.2015.08.005,T1,GRN co-option & novelty,
+shodja2025notch,Shodja & Glassford et al.,2025,Science Advances,10.1126/sciadv.adt7825,T1,GRN co-option & novelty,
+rice2023phallus,Rice & David et al.,2023,J. Exp. Zool. B,10.1002/jez.b.23113,T1,GRN co-option & novelty,T3
+rice2024trichome,Rice & Gaitán-Escudero et al.,2024,Current Biology,10.1016/j.cub.2024.09.073,T1,GRN co-option & novelty,
+kopp2000bab,Kopp & Duncan et al.,2000,Nature,10.1038/35046017,T2,dsx / sex determination,
+williams2008switch,Williams & Selegue et al.,2008,Cell,10.1016/j.cell.2008.06.052,T2,dsx / sex determination,
+tanaka2011hox,Tanaka & Barmina et al.,2011,PLOS Biology,10.1371/journal.pbio.1001131,T2,dsx / sex determination,
+rice2018immigrans,Rice & Barmina et al.,2018,Evolution & Development,10.1111/ede.12249,T2,dsx / sex determination,
+kopp2012dmrt,Kopp,2012,Trends in Genetics,10.1016/j.tig.2011.12.002,T2,dsx / sex determination,
+hopkins2021evolution,Hopkins & Kopp,2021,Curr. Opin. Genet. Dev.,10.1016/j.gde.2021.02.011,T2,dsx / sex determination,T3
+tanaka2009sexcombs,Tanaka & Barmina et al.,2009,PNAS,10.1073/pnas.0807493106,T2,dsx / sex determination,T3
+kopp2002oriental,Kopp & True,2002,Evolution & Development,10.1046/j.1525-142X.2002.02017.x,T3,Evo-devo & sexual selection,
+massey2020wings,Massey & Rice et al.,2020,Evolution,10.1111/evo.13990,T3,Evo-devo & sexual selection,
+vincent2019atlas,Vincent & Rice et al.,2019,G3,10.1534/g3.119.400788,T4,Atlases & nomenclature,
+rice2019maleatlas,Rice & David et al.,2019,Fly,10.1080/19336934.2019.1653733,T4,Atlases & nomenclature,
+mcqueen2022femaleatlas,McQueen & Afkhami et al.,2022,Fly,10.1080/19336934.2022.2058309,T4,Atlases & nomenclature,
+urum2024atlas,Urum & Rice et al.,2024,Front. Cell Dev. Biol.,10.3389/fcell.2024.1349275,T4,Atlases & nomenclature,
+parallels2025,McQueen & Rice et al.,2025,GENETICS,10.1093/genetics/iyaf221,T4,Atlases & nomenclature,
+tanaka2022suzukii,Tanaka & Takahashi et al.,2022,BMC Ecol. Evol.,10.1186/s12862-022-02046-1,T4,Atlases & nomenclature,

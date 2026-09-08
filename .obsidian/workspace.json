@@ -1,0 +1,221 @@
+{
+  "main": {
+    "id": "4c98a1bffade5604",
+    "type": "split",
+    "children": [
+      {
+        "id": "a0a25b44ab37307a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f158329c82cd52c8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04_MOCs/Research Threads - Graph.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Research Threads - Graph"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "11150c866f0b17d0",
+    "type": "split",
+    "children": [
+      {
+        "id": "dd3003ec70ed67a7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ebbdbc20f5330da8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "e5bf716f18763ae0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "3d7350e7a5ce9bb4",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "df5e81e38b8480cf",
+    "type": "split",
+    "children": [
+      {
+        "id": "1b99b3b6e3ce9ea0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "06461dc13751d7b9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "10a4425351238ad3",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "8c7086ecea012dd2",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "0835dc3aa76f258f",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "da47a6c467c5ed54",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "f158329c82cd52c8",
+  "lastOpenFiles": [
+    "04_MOCs/Drosophila Terminalia - MOC.md",
+    "A Notch signal required for a morphological novelty in Drosophila has antecedent functions in genital disc eversion.md",
+    "02_Concepts/Genital Disc.md",
+    "Co-option of an Ancestral Hox-Regulated Network Underlies a Recently Evolved Morphological Novelty.md",
+    "03_Organisms/Drosophila melanogaster.md",
+    "08_Reviews/Parallels in the regulatory landscape - Literature Review.md",
+    "tools/__pycache__/zotero_add.cpython-314.pyc",
+    "tools/papers.json",
+    "tools/zotero_add.py",
+    "references/drosophila_terminalia.bib",
+    "references",
+    "00_Inbox/README.md",
+    "07_Archive/README.md",
+    "01_Sources/co-evolving-wing-spots-and-mating-displays-are-genetically-separable-traits-in-drosophila-2020.md",
+    "01_Sources/an-atlas-of-transcription-factors-expressed-in-male-pupal-terminalia-of-drosophila-melanogaster-2019.md",
+    "01_Sources/dmrt-genes-in-the-development-and-evolution-of-sexual-dimorphism-2012.md",
+    "01_Sources/evolution-of-sexual-development-and-sexual-dimorphism-in-insects-2021.md",
+    "01_Sources/genetic-control-and-evolution-of-sexually-dimorphic-characters-in-drosophila-2000.md",
+    "01_Sources/the-regulation-and-evolution-of-a-genetic-switch-controlling-sexually-dimorphic-traits-in-drosophila-2008.md",
+    "01_Sources/evolution-of-sex-specific-traits-through-changes-in-hox-dependent-doublesex-expression-2011.md",
+    "01_Sources/resolving-between-novelty-and-homology-in-the-rapidly-evolving-phallus-of-drosophila-2023.md",
+    "01_Sources/a-notch-signal-required-for-a-morphological-novelty-in-drosophila-has-antecedent-functions-in-genital-disc-eversion-2025.md",
+    "01_Sources/co-option-of-an-ancestral-hox-regulated-network-underlies-a-recently-evolved-morphological-novelty-2015.md",
+    "tools/__pycache__/pdf_to_obsidian.cpython-314.pyc",
+    "tools/__pycache__",
+    "05_Templates/MOC Template.md",
+    "05_Templates/Organism Template.md",
+    "02_Concepts/Doublesex (dsx).md",
+    "02_Concepts/Bithorax Complex (BX-C).md",
+    "02_Concepts/Abdominal-B (Abd-B).md"
+  ]
+}

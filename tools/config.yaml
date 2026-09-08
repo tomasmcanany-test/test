@@ -1,0 +1,25 @@
+# pdf_to_obsidian.py configuration
+# All paths are relative to the vault root.
+
+vault: "."
+inbox: "00_Inbox"
+sources: "01_Sources"
+concepts: "02_Concepts"
+organisms: "03_Organisms"
+mocs: "04_MOCs"
+attachments: "06_Attachments"
+archive: "07_Archive"
+template: "05_Templates/Source Note Template.md"
+concepts_index: "tools/concepts_index.json"
+papers_index: "tools/papers_index.json"
+
+crossref_timeout: 15
+
+# Optional LLM summarization. Set enabled: true and provide an API key via the
+# environment variable named in api_key_env (default OPENAI_API_KEY).
+# Works with any OpenAI-compatible endpoint (OpenAI, local LM Studio, etc.).
+llm:
+  enabled: false
+  base_url: "https://api.openai.com/v1"
+  model: "gpt-4o-mini"
+  api_key_env: "OPENAI_API_KEY"

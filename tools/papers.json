@@ -1,0 +1,16 @@
+{
+  "_comment": "List of papers to add to Zotero via tools/zotero_add.py. Add entries as needed.",
+  "papers": [
+    {
+      "title": "Example paper title",
+      "journal": "Journal Name",
+      "date": "2026",
+      "doi": "10.xxxx/example",
+      "creators": [
+        {"creatorType": "author", "firstName": "Jane", "lastName": "Doe"},
+        {"creatorType": "author", "firstName": "John", "lastName": "Smith"}
+      ],
+      "abstract": "Optional abstract text."
+    }
+  ]
+}

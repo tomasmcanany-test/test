@@ -1,0 +1,120 @@
+{
+  "_comment": "Paper index used by pdf_to_obsidian.py to auto-detect paper-to-paper references. Each record: title (for substring matching against extracted text), doi (primary match), note (Obsidian note display name to embed as [[note]]), aliases (author-year citation strings). Seed data derived from references/drosophila_terminalia.bib.",
+  "papers": [
+    {
+      "title": "Co-option of an Ancestral Hox-Regulated Network Underlies a Recently Evolved Morphological Novelty",
+      "doi": "10.1016/j.devcel.2015.08.005",
+      "note": "Co-option of an Ancestral Hox-Regulated Network Underlies a Recently Evolved Morphological Novelty",
+      "aliases": ["Glassford et al., 2015", "Glassford et al. 2015"]
+    },
+    {
+      "title": "A Notch signal required for a morphological novelty in Drosophila has antecedent functions in genital disc eversion",
+      "doi": "10.1126/sciadv.adt7825",
+      "note": "A Notch signal required for a morphological novelty in Drosophila has antecedent functions in genital disc eversion",
+      "aliases": ["Shodja et al., 2025", "Shodja et al. 2025"]
+    },
+    {
+      "title": "Resolving between novelty and homology in the rapidly evolving phallus of Drosophila",
+      "doi": "10.1002/jez.b.23113",
+      "note": "Resolving between novelty and homology in the rapidly evolving phallus of Drosophila",
+      "aliases": ["Rice et al., 2023", "Rice et al. 2023"]
+    },
+    {
+      "title": "Evolution of sex-specific traits through changes in HOX-dependent doublesex expression",
+      "doi": "10.1371/journal.pbio.1001131",
+      "note": "Evolution of sex-specific traits through changes in HOX-dependent doublesex expression",
+      "aliases": ["Tanaka et al., 2011", "Tanaka et al. 2011"]
+    },
+    {
+      "title": "The regulation and evolution of a genetic switch controlling sexually dimorphic traits in Drosophila",
+      "doi": "10.1016/j.cell.2008.06.052",
+      "note": "The regulation and evolution of a genetic switch controlling sexually dimorphic traits in Drosophila",
+      "aliases": ["Williams et al., 2008", "Williams et al. 2008"]
+    },
+    {
+      "title": "Genetic control and evolution of sexually dimorphic characters in Drosophila",
+      "doi": "10.1038/35046017",
+      "note": "Genetic control and evolution of sexually dimorphic characters in Drosophila",
+      "aliases": ["Kopp et al., 2000", "Kopp et al. 2000", "Kopp, Duncan & Carroll, 2000"]
+    },
+    {
+      "title": "Evolution of sexual development and sexual dimorphism in insects",
+      "doi": "10.1016/j.gde.2021.02.011",
+      "note": "Evolution of sexual development and sexual dimorphism in insects",
+      "aliases": ["Hopkins and Kopp, 2021", "Hopkins & Kopp, 2021"]
+    },
+    {
+      "title": "Dmrt genes in the development and evolution of sexual dimorphism",
+      "doi": "10.1016/j.tig.2011.12.002",
+      "note": "Dmrt genes in the development and evolution of sexual dimorphism",
+      "aliases": ["Kopp, 2012", "Kopp 2012"]
+    },
+    {
+      "title": "An Atlas of Transcription Factors Expressed in Male Pupal Terminalia of Drosophila melanogaster",
+      "doi": "10.1534/g3.119.400788",
+      "note": "An Atlas of Transcription Factors Expressed in Male Pupal Terminalia of Drosophila melanogaster",
+      "aliases": ["Vincent et al., 2019", "Vincent et al. 2019"]
+    },
+    {
+      "title": "Co‐evolving wing spots and mating displays are genetically separable traits in Drosophila",
+      "doi": "10.1111/evo.13990",
+      "note": "Co‐evolving wing spots and mating displays are genetically separable traits in Drosophila",
+      "aliases": ["Massey et al., 2020", "Massey et al. 2020"]
+    },
+    {
+      "title": "A Standardized Nomenclature and Atlas of the Male Terminalia of Drosophila melanogaster",
+      "doi": "10.1080/19336934.2019.1653733",
+      "note": "A Standardized Nomenclature and Atlas of the Male Terminalia of Drosophila melanogaster",
+      "aliases": ["Rice et al., 2019", "Rice et al. 2019"]
+    },
+    {
+      "title": "A standardized nomenclature and atlas of the female terminalia of Drosophila melanogaster",
+      "doi": "10.1080/19336934.2022.2058309",
+      "note": "A standardized nomenclature and atlas of the female terminalia of Drosophila melanogaster",
+      "aliases": ["McQueen et al., 2022", "McQueen et al. 2022"]
+    },
+    {
+      "title": "A developmental atlas of male terminalia across twelve species of Drosophila",
+      "doi": "10.3389/fcell.2024.1349275",
+      "note": "A developmental atlas of male terminalia across twelve species of Drosophila",
+      "aliases": ["Urum et al., 2024", "Urum et al. 2024"]
+    },
+    {
+      "title": "Co-option of the trichome-forming network initiated the evolution of a morphological novelty in Drosophila eugracilis",
+      "doi": "10.1016/j.cub.2024.09.073",
+      "note": "Co-option of the trichome-forming network initiated the evolution of a morphological novelty in Drosophila eugracilis",
+      "aliases": ["Rice et al., 2024", "Rice et al. 2024"]
+    },
+    {
+      "title": "Evolving doublesex expression correlates with the origin and diversification of male sexual ornaments in the Drosophila immigrans species group",
+      "doi": "10.1111/ede.12249",
+      "note": "Evolving doublesex expression correlates with the origin and diversification of male sexual ornaments in the Drosophila immigrans species group",
+      "aliases": ["Rice et al., 2018", "Rice et al. 2018"]
+    },
+    {
+      "title": "Trichomes on female reproductive tract: rapid diversification and underlying gene regulatory network in Drosophila suzukii and its related species",
+      "doi": "10.1186/s12862-022-02046-1",
+      "note": "Trichomes on female reproductive tract: rapid diversification and underlying gene regulatory network in Drosophila suzukii and its related species",
+      "aliases": ["Tanaka et al., 2022", "Tanaka et al. 2022"]
+    },
+    {
+      "title": "Parallels in the Regulatory Landscape of Dimorphic Female and Male Genital Structures in Drosophila melanogaster",
+      "doi": "10.1093/genetics/iyaf221",
+      "note": "Parallels in the Regulatory Landscape of Dimorphic Female and Male Genital Structures in Drosophila melanogaster",
+      "aliases": ["McQueen et al., 2025", "McQueen et al. 2025"]
+    },
+    {
+      "title": "Evolution of male sexual characters in the Oriental Drosophila melanogaster species group",
+      "doi": "10.1046/j.1525-142X.2002.02017.x",
+      "note": "Evolution of male sexual characters in the Oriental Drosophila melanogaster species group",
+      "aliases": ["Kopp and True, 2002", "Kopp & True, 2002", "Kopp and True 2002"]
+    },
+    {
+      "title": "Distinct developmental mechanisms underly the evolutionary diversification in Drosophila: sex combs",
+      "doi": "10.1073/pnas.0807493106",
+      "note": "Distinct developmental mechanisms underlie the evolutionary diversification of Drosophila sex combs",
+      "aliases": ["Tanaka et al., 2009", "Tanaka et al. 2009"]
+    }
+
+  ]
+}

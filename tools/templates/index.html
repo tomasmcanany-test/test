@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PDF → Obsidian — Drosophila Terminalia Vault</title>
+<style>
+  :root {
+    --bg: #F5F1E8;
+    --panel: #FFFFFF;
+    --ink: #26332F;
+    --accent: #F48067;
+    --accent2: #00B49B;
+    --border: #D8D2C4;
+    --muted: #7A7F7B;
+    --ok: #00B49B;
+    --err: #C0392B;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+  }
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 18px 28px;
+  }
+  header h1 { margin: 0; font-size: 20px; font-weight: 600; }
+  header p { margin: 4px 0 0; color: #c9d3cf; font-size: 13px; }
+  main { max-width: 860px; margin: 28px auto; padding: 0 20px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 22px;
+  }
+  .card h2 { margin: 0 0 14px; font-size: 16px; }
+  #dropzone {
+    border: 2px dashed var(--accent2);
+    border-radius: 12px;
+    padding: 46px 20px;
+    text-align: center;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .15s, border-color .15s;
+    background: #FBFAF5;
+  }
+  #dropzone.dragover {
+    background: #E7F6F2;
+    border-color: var(--accent2);
+    color: var(--ink);
+  }
+  #dropzone .big { font-size: 40px; line-height: 1; margin-bottom: 8px; }
+  #dropzone .hint { font-size: 15px; }
+  #dropzone .sub { font-size: 12px; margin-top: 6px; }
+  #fileInput { display: none; }
+  .btn {
+    display: inline-block;
+    margin-top: 14px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .btn:disabled { opacity: .5; cursor: not-allowed; }
+  #status { margin-top: 12px; font-size: 13px; color: var(--muted); }
+  .result {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 8px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .result .icon { font-size: 16px; }
+  .result.ok .icon { color: var(--ok); }
+  .result.err .icon { color: var(--err); }
+  .result .msg { flex: 1; }
+  .result .view {
+    color: var(--accent2);
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  #notesList { list-style: none; margin: 0; padding: 0; }
+  #notesList li {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  #notesList li a { color: var(--accent2); cursor: pointer; }
+  #preview {
+    background: #1E1E1E;
+    color: #D8D8D8;
+    border-radius: 8px;
+    padding: 14px;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+    white-space: pre-wrap;
+    max-height: 480px;
+    overflow: auto;
+    display: none;
+    margin-top: 12px;
+  }
+  .muted { color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>PDF → Obsidian</h1>
+  <p>Drosophila terminalia knowledge vault — drop research articles to turn them into notes</p>
+</header>
+
+<main>
+  <div class="card">
+    <h2>Add articles</h2>
+    <div id="dropzone">
+      <div class="big">⬤</div>
+      <div class="hint">Drag &amp; drop PDF files here</div>
+      <div class="sub">or click to browse</div>
+      <input type="file" id="fileInput" accept=".pdf" multiple>
+      <button class="btn" id="uploadBtn" disabled>Process</button>
+    </div>
+    <div id="status"></div>
+    <div id="results"></div>
+  </div>
+
+  <div class="card">
+    <h2>Recent notes</h2>
+    <div class="muted" id="notesEmpty">No source notes yet.</div>
+    <ul id="notesList"></ul>
+    <div id="preview"></div>
+  </div>
+</main>
+
+<script>
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('fileInput');
+const uploadBtn = document.getElementById('uploadBtn');
+const statusEl = document.getElementById('status');
+const resultsEl = document.getElementById('results');
+const notesList = document.getElementById('notesList');
+const notesEmpty = document.getElementById('notesEmpty');
+const preview = document.getElementById('preview');
+
+let pending = [];
+
+function updateBtn() {
+  uploadBtn.disabled = pending.length === 0;
+  uploadBtn.textContent = pending.length ? `Process ${pending.length} file${pending.length > 1 ? 's' : ''}` : 'Process';
+}
+
+dropzone.addEventListener('click', () => fileInput.click());
+dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('dragover'); });
+dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+dropzone.addEventListener('drop', (e) => {
+  e.preventDefault();
+  dropzone.classList.remove('dragover');
+  addFiles(e.dataTransfer.files);
+});
+fileInput.addEventListener('change', () => addFiles(fileInput.files));
+
+function addFiles(fileList) {
+  const pdfs = [...fileList].filter(f => f.name.toLowerCase().endsWith('.pdf'));
+  const skipped = [...fileList].filter(f => !f.name.toLowerCase().endsWith('.pdf'));
+  pending = [...pending, ...pdfs];
+  updateBtn();
+  if (skipped.length) {
+    statusEl.textContent = `Skipped ${skipped.length} non-PDF file(s).`;
+  }
+}
+
+uploadBtn.addEventListener('click', async () => {
+  if (!pending.length) return;
+  const fd = new FormData();
+  pending.forEach(f => fd.append('files', f));
+  uploadBtn.disabled = true;
+  statusEl.textContent = 'Processing…';
+  resultsEl.innerHTML = '';
+  try {
+    const resp = await fetch('/upload', { method: 'POST', body: fd });
+    const data = await resp.json();
+    renderResults(data.results || []);
+    pending = [];
+    updateBtn();
+    statusEl.textContent = 'Done.';
+    loadNotes();
+  } catch (err) {
+    statusEl.textContent = 'Upload failed: ' + err.message;
+    updateBtn();
+  }
+});
+
+function renderResults(results) {
+  resultsEl.innerHTML = '';
+  for (const r of results) {
+    const row = document.createElement('div');
+    row.className = 'result ' + r.status;
+    const icon = r.status === 'ok' ? '✓' : '✕';
+    row.innerHTML = `<span class="icon">${icon}</span>` +
+      `<span class="msg"><b>${escapeHtml(r.file)}</b> — ${r.status === 'ok' ? 'note created' : escapeHtml(r.message || 'error')}</span>` +
+      (r.note ? `<span class="view" data-path="${escapeHtml(r.note)}">view</span>` : '');
+    resultsEl.appendChild(row);
+  }
+  resultsEl.querySelectorAll('.view').forEach(el => {
+    el.addEventListener('click', () => showPreview(el.dataset.path));
+  });
+}
+
+async function loadNotes() {
+  try {
+    const resp = await fetch('/notes');
+    const data = await resp.json();
+    const items = data.notes || [];
+    notesEmpty.style.display = items.length ? 'none' : '';
+    notesList.innerHTML = '';
+    items.forEach(n => {
+      const li = document.createElement('li');
+      li.innerHTML = `<span>${escapeHtml(n.name)}</span><a data-path="${escapeHtml(n.path)}">view</a>`;
+      notesList.appendChild(li);
+    });
+    notesList.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => showPreview(a.dataset.path));
+    });
+  } catch (e) { /* ignore */ }
+}
+
+async function showPreview(path) {
+  try {
+    const resp = await fetch('/note?path=' + encodeURIComponent(path));
+    const text = await resp.text();
+    preview.textContent = text;
+    preview.style.display = 'block';
+  } catch (e) {
+    preview.textContent = 'Could not load note.';
+    preview.style.display = 'block';
+  }
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+loadNotes();
+</script>
+</body>
+</html>

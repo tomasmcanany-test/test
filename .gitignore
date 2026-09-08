@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tool output / caches
+graphify-out/
+.bin/
+*.bak
